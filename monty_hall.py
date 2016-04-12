@@ -62,10 +62,10 @@ def main():
 
     counter, win_total = 1, 0
     initial_door, total_doors = 0, 3
-
+    choice = random.randint(0,2)
     while counter <= user_input_runs:
-        choice = set_doors(total_doors)
-        doors = reveal_bad_door(choice, initial_door)
+        doors = set_doors(total_doors)
+        doors = reveal_bad_door(choice, doors)
         choice, doors = change_doors_or_not(user_input_strat, choice, doors)
         win_total += win_or_lose(choice, doors)
         counter += 1
